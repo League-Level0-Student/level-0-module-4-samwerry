@@ -6,21 +6,32 @@ package charAt_scanners_optionDialogs;
 import java.io.IOException;
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
 public class PiAloud {
 
 	// 1. Make a main method and make sure your program can run
 public static void main(String[] args) {
-	String pi = "3.1415926535897932384626433832795";
+	String pi = "3.141592653589";
 	
 	System.out.println(pi.charAt(4));
-	System.out.println(pi.charAt(19));
+	//System.out.println(pi.charAt(19));
 	
-	for(int i = 0; i)
+	for (int i = 0; i < pi.length(); i++) {
+		System.out.println(pi.charAt(i));
+	}
+	for(int i = 0; i <pi.length(); i++) {
+	speak(pi.charAt(i));
+	}
+	String input = JOptionPane.showInputDialog("whats the 2nd digit of pi");
 	
+	if(input.charAt(0)==pi.charAt(2)){
+		JOptionPane.showMessageDialog(null, "correct!");
 	
-	
-	
-	
+	}
+	else {
+		JOptionPane.showMessageDialog(null, "Wrong!");
+	}
 	
 }
 	// 2. Make a String variable to hold the value of Pi. You could use http://www.piday.org/million/ for the value.
