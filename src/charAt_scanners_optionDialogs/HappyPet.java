@@ -21,83 +21,104 @@ public class HappyPet {
 		// pet happy
 		// (eg: cuddle, food, water, take a walk, groom, clean up poop).
 		// Make sure to customize the title and question too.
+for(int i=0; i<3; i++) {
+	
+		int task =	JOptionPane.showOptionDialog(null, "What will you do to make your pet happy?", "a", 0,
 
-		JOptionPane.showOptionDialog(null, "What will you do to make your pet happy?", "a", 0,
 				JOptionPane.INFORMATION_MESSAGE, null,
 				new String[] { "cuddle", "food", "take a walk", "groom", "clean up poop" }, null);
 		// 5. Use user input to call the appropriate method created in step 4.
 
 		// 6. If you determine the happiness level is large enough, tell the
 		// user that he loves his pet and use break; to exit for loop.
+if(task==0) {
+	cuddle();
+}
+else if(task ==1) {
+	feed();
+}
+else if(task==2) {
+	walk();
+}
+else if(task==3) {
+	groom();
+}
+else if(task==4) {
+	PoopCleaner();
+}
+	
+JOptionPane.showMessageDialog(null, "happiness level is " + happinessLevel);
 	}
-
-	// 4. Create methods to handle each of your user selections.
+	}
+	 // 4. Create methods to handle each of your user selections.
 	// Each method should create a pop-up with the pet's response (eg. cat might
 	// purr when pet),
 	// and INCREMENT the pet's happiness Level.
 
-	void walk() {
+	static void walk() {
 		if (pet.equals("dog")) {
 			JOptionPane.showMessageDialog(null, "dog might wag it's tail when walked");
-			happinessLevel = +5;
+			happinessLevel+=5;
 		} else if (pet.equals("cat")) {
 			JOptionPane.showMessageDialog(null, "cat will not enjoy walking with a human, and walk by itself");
-			happinessLevel = -3;
+			happinessLevel -=3;
 		} else if (pet.equals("bird")) {
 			JOptionPane.showMessageDialog(null, "your bird will not enjoy being walked, and fly away");
-			happinessLevel = -5;
+			happinessLevel -=5;
 		}
 
 	}
 
-	void groom() {
+	static void groom() {
 		if (pet.equals("dog")) {
 			JOptionPane.showMessageDialog(null, "dog might lick you if groomed");
-			happinessLevel = +7;
+			happinessLevel +=7;
 		} else if (pet.equals("cat")) {
 			JOptionPane.showMessageDialog(null, "Your cat may purr when groomed");
-			happinessLevel = +7;
+			happinessLevel +=7;
 		} else if (pet.equals("Bird")) {
 			JOptionPane.showMessageDialog(null, "your bird will most likely enjoy being groomed and tweet");
-			happinessLevel = +7;
+			happinessLevel +=7;
 		}
 	}
 
-	void cuddle() {
+	static void cuddle() {
 		if (pet.equals("dog")) {
 			JOptionPane.showMessageDialog(null, "your dog will love being cuddled and wag his tail");
-			happinessLevel = +10;
+			happinessLevel +=10;
 		} else if (pet.equals("cat")) {
 			JOptionPane.showMessageDialog(null, "your cat will enjoy being cuddled for a period of time, and purr");
-			happinessLevel = +8;
+			happinessLevel +=8;
 		} else if (pet.equals("bird")) {
 			JOptionPane.showMessageDialog(null, "your bird will enjoy being lgihtly cuddled, and be happy");
-			happinessLevel = +5;
+			happinessLevel +=5;
 		}
 	}
 
-	void feed() {
+	static void feed() {
 		if (pet.equals("dog")) {
 			JOptionPane.showMessageDialog(null, "your dog will be happy if fed, and be waiting for his next meal");
-			happinessLevel = +8;
+			happinessLevel +=8;
 		} else if (pet.equals("cat")) {
 			JOptionPane.showMessageDialog(null, "your cat will enjoy being pet, and keep on with its day");
-			happinessLevel = +7;
+			happinessLevel +=7;
 		} else if (pet.equals("bird")) {
 			JOptionPane.showMessageDialog(null, "your bird will enjoy being fed, and squak");
-			happinessLevel = +6;
+			happinessLevel +=6;
 		}
 	}
 
-	void PoopCleaner() {
+	static void PoopCleaner() {
 		if (pet.equals("dog")) {
 			JOptionPane.showMessageDialog(null,
 					"Your dog will enjoy having his/her pooped being cleaned up and give you a big smile");
-			happinessLevel = +4;
+			happinessLevel +=4;
 		} else if (pet.equals("cat")) {
 			JOptionPane.showMessageDialog(null, "your cat will notice that you cleaned its poop and wont care");
+			happinessLevel +=0;
 		} else if (pet.equals("bird")) {
 			JOptionPane.showMessageDialog(null, "Your bird will not care that you cleaned his poop");
+			happinessLevel += 0;
 		}
 	}
 }
